@@ -12,15 +12,15 @@ app.use(express.json());
 // API Endpoints
 app.get('/api/matches', async (req, res) => {
   try {
+    console.log('Fetching matches with key:', process.env.REACT_APP_FOOTBALL_API_KEY ? 'Present' : 'MISSING');
     const response = await axios.get('https://api.football-data.org/v4/competitions/PL/matches', {
       headers: {
         'X-Auth-Token': process.env.REACT_APP_FOOTBALL_API_KEY
-      },
-      params: { status: 'LIVE,IN_PLAY,PAUSED,FINISHED' }
+      }
     });
     res.json(response.data);
   } catch (err) {
-    console.error('API Error:', err.response?.status, err.response?.data);
+    console.error('API Error Detail:', err.message);
     res.status(500).json({ error: err.message, details: err.response?.data });
   }
 });
