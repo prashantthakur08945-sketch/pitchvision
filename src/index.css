@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #080812;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar but keep scroll */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a2e;
+  border-radius: 2px;
+}
+
+/* Smooth scrollbar on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a1a2e transparent;
+}
