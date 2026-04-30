@@ -23,8 +23,9 @@ app.get('/api/matches', async (req, res) => {
       matches: [
         { 
           id: 1, 
-          homeTeam: { name: 'Arsenal' }, 
-          awayTeam: { name: 'Man City' }, 
+          utcDate: '2024-03-30T15:00:00Z',
+          homeTeam: { name: 'Arsenal', crest: 'https://crests.football-data.org/57.png' }, 
+          awayTeam: { name: 'Man City', crest: 'https://crests.football-data.org/65.png' }, 
           status: 'FINISHED', 
           matchday: 28,
           score: {
@@ -35,8 +36,9 @@ app.get('/api/matches', async (req, res) => {
         },
         { 
           id: 2, 
-          homeTeam: { name: 'Liverpool' }, 
-          awayTeam: { name: 'Chelsea' }, 
+          utcDate: '2024-03-31T16:30:00Z',
+          homeTeam: { name: 'Liverpool', crest: 'https://crests.football-data.org/64.png' }, 
+          awayTeam: { name: 'Chelsea', crest: 'https://crests.football-data.org/61.png' }, 
           status: 'FINISHED', 
           matchday: 28,
           score: {
@@ -47,8 +49,9 @@ app.get('/api/matches', async (req, res) => {
         },
         { 
           id: 3, 
-          homeTeam: { name: 'Man Utd' }, 
-          awayTeam: { name: 'Tottenham' }, 
+          utcDate: '2024-04-01T19:00:00Z',
+          homeTeam: { name: 'Man Utd', crest: 'https://crests.football-data.org/66.png' }, 
+          awayTeam: { name: 'Tottenham', crest: 'https://crests.football-data.org/73.png' }, 
           status: 'FINISHED', 
           matchday: 28,
           score: {
