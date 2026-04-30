@@ -21,11 +21,42 @@ app.get('/api/matches', async (req, res) => {
     console.log('Using Mock Match Data (API Blocked)');
     res.json({
       matches: [
-        { id: 1, homeTeam: { name: 'Arsenal', score: 2 }, awayTeam: { name: 'Man City', score: 1 }, status: 'FINISHED', matchday: 28, halfTime: { home: 1, away: 0 }, winner: 'HOME_TEAM' },
-        { id: 2, homeTeam: { name: 'Liverpool', score: 3 }, awayTeam: { name: 'Chelsea', score: 0 }, status: 'FINISHED', matchday: 28, halfTime: { home: 1, away: 0 }, winner: 'HOME_TEAM' },
-        { id: 3, homeTeam: { name: 'Man Utd', score: 1 }, awayTeam: { name: 'Tottenham', score: 1 }, status: 'FINISHED', matchday: 28, halfTime: { home: 0, away: 1 }, winner: 'DRAW' },
-        { id: 4, homeTeam: { name: 'Aston Villa', score: 2 }, awayTeam: { name: 'Newcastle', score: 2 }, status: 'FINISHED', matchday: 28, halfTime: { home: 1, away: 1 }, winner: 'DRAW' },
-        { id: 5, homeTeam: { name: 'Brighton', score: 0 }, awayTeam: { name: 'Everton', score: 1 }, status: 'FINISHED', matchday: 28, halfTime: { home: 0, away: 0 }, winner: 'AWAY_TEAM' }
+        { 
+          id: 1, 
+          homeTeam: { name: 'Arsenal' }, 
+          awayTeam: { name: 'Man City' }, 
+          status: 'FINISHED', 
+          matchday: 28,
+          score: {
+            fullTime: { home: 2, away: 1 },
+            halfTime: { home: 1, away: 0 },
+            winner: 'HOME_TEAM'
+          }
+        },
+        { 
+          id: 2, 
+          homeTeam: { name: 'Liverpool' }, 
+          awayTeam: { name: 'Chelsea' }, 
+          status: 'FINISHED', 
+          matchday: 28,
+          score: {
+            fullTime: { home: 3, away: 0 },
+            halfTime: { home: 1, away: 0 },
+            winner: 'HOME_TEAM'
+          }
+        },
+        { 
+          id: 3, 
+          homeTeam: { name: 'Man Utd' }, 
+          awayTeam: { name: 'Tottenham' }, 
+          status: 'FINISHED', 
+          matchday: 28,
+          score: {
+            fullTime: { home: 1, away: 1 },
+            halfTime: { home: 0, away: 1 },
+            winner: 'DRAW'
+          }
+        }
       ]
     });
   }
