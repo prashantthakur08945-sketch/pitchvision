@@ -76,7 +76,8 @@ Be pundit-like, specific, and mention key stats. No bullet points, just flowing 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'build')));
   
-  app.get('(.*)', (req, res) => {
+  // Standard catch-all for React routing
+  app.use((req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
   });
 }
