@@ -74,7 +74,8 @@ function App() {
   useEffect(() => {
     if (activeTab === 'table' && !standings) {
       setStandingsLoading(true);
-      axios.get('http://localhost:5000/api/standings')
+      const apiBase = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api';
+      axios.get(`${apiBase}/standings`)
         .then(res => setStandings(res.data.standings))
         .catch(err => console.error(err))
         .finally(() => setStandingsLoading(false));
